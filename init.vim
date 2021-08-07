@@ -6,12 +6,15 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'w0ng/vim-hybrid'
-Plug 'fatih/molokai'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-
 " 异步执行
 Plug 'skywind3000/asyncrun.vim'
+" linting
+Plug 'dense-analysis/ale'
+Plug 'flazz/vim-colorschemes'
+"Plug 'morhetz/gruvbox'
+Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 call plug#end()
 
 """"""""""""""""""""""
@@ -40,6 +43,8 @@ set autoindent
 
 
 
+" 不要铃声
+set noerrorbells
 
 
 " 相对行号
@@ -65,7 +70,10 @@ set statusline=%F%m%r%h%w\ \ \ \ \ \ \ \ \ \ [POS=%l,%v][%p%%]\ %{strftime(\"%d/
 
 
 " 高亮显示搜索结果
-set hlsearch
+set nohlsearch
+
+" 允许buffer未保存切换
+set hidden 
 
 " 搜索时立刻跳转到匹配
 set incsearch
@@ -76,8 +84,21 @@ set ignorecase
 
 
 " 定义前缀键为，
-let mapleader=","
+let mapleader=" "
 
+
+" 距离边界还有八行就可以开始滚动
+set scrolloff=8
+
+set colorcolumn=80
+
+set signcolumn=yes
+
+" 设置颜色主题
+colorscheme gruvbox
+
+nnoremap <C-a> <Home>
+nnoremap <C-e> <End>
 
 
 """""""""""""""""""
@@ -120,5 +141,66 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 
 
+
+""""""""""""""""""""""
+"""""""编译运行"""""""
+""""""""""""""""""""""
+
+" 自动打开 quickfix window ，高度为 6
+let g:asyncrun_open = 6
+
+
+" 设置 F10 打开/关闭 Quickfix 窗口
+nnoremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
+
+
+" 编译单文件
+nnoremap <silent> <leader>c :AsyncRun g++ -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+
+
+" 运行单个文件
+nnoremap <silent> <leader>r :AsyncRun -raw -cwd=$(VIM_FILEDIR) "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+
+
+" 定义项目目录
+let g:asyncrun_rootmarks = ['.svn', '.git', '.root', '_darcs', 'build.xml']
+
+" make项目
+nnoremap <silent> <leader>m :AsyncRun -cwd=<root> make <cr>
+
+
+""""""""""""""""""""""
+""""""""""ALE"""""""""
+""""""""""""""""""""""
+
+
+let g:ale_linters_explicit = 1
+let g:ale_completion_delay = 500
+let g:ale_echo_delay = 20
+let g:ale_lint_delay = 500
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11'
+let g:ale_c_cppcheck_options = ''
+let g:ale_cpp_cppcheck_options = ''
+
+let g:ale_linters = {
+\   'cpp': ['clang'],
+\   'c': ['clang'],
+\}
+
+
+""""""""""""""""""""""
+"""""""signify""""""""
+""""""""""""""""""""""
+
+set updatetime=100
+
+" 把:diff 映射为:SignifyDiff
+cnoremap diff SignifyDiff
 
 
