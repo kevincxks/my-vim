@@ -15,6 +15,12 @@ Plug 'dense-analysis/ale'
 Plug 'flazz/vim-colorschemes'
 "Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+" 主题
+Plug 'ajmwagar/vim-deus'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 """"""""""""""""""""""
@@ -66,7 +72,7 @@ set linebreak
 
 " 是否显示状态栏，0不显示，1只在多窗口显示，2显示
 set laststatus=2
-set statusline=%F%m%r%h%w\ \ \ \ \ \ \ \ \ \ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+"set statusline=%F%m%r%h%w\ \ \ \ \ \ \ \ \ \ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 
 
 " 高亮显示搜索结果
@@ -95,7 +101,8 @@ set colorcolumn=80
 set signcolumn=yes
 
 " 设置颜色主题
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme deus
 
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
@@ -151,11 +158,11 @@ let g:asyncrun_open = 6
 
 
 " 设置 F10 打开/关闭 Quickfix 窗口
-nnoremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
+noremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
 
 
 " 编译单文件
-nnoremap <silent> <leader>c :AsyncRun g++ -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+nnoremap <silent> <leader>c :AsyncRun g++ -Wall -O2 -std=c++11 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 
 
 " 运行单个文件
@@ -185,6 +192,7 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
 let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11'
+let g:ale_cpp_cc_options = '-Wall -O2 -std=c++11'
 let g:ale_c_cppcheck_options = ''
 let g:ale_cpp_cppcheck_options = ''
 
@@ -203,4 +211,13 @@ set updatetime=100
 " 把:diff 映射为:SignifyDiff
 cnoremap diff SignifyDiff
 
+""""""""""""""""""""""
+""""""highlight"""""""
+""""""""""""""""""""""
 
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
