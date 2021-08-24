@@ -2,7 +2,7 @@
 call plug#begin()
 " 让光标处在的单词拥有下划线 
 Plug 'itchyny/vim-cursorword'
-Plug 'ludovicchabant/vim-gutentags' 
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'w0ng/vim-hybrid'
@@ -22,6 +22,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 """"""""""""""""""""""
@@ -94,6 +95,10 @@ set ignorecase
 let mapleader=" "
 
 
+" 把保存映射一下
+inoremap <C-S> <C-[>:w<CR>
+nnoremap <C-S> :w<CR>
+
 " 距离边界还有八行就可以开始滚动
 set scrolloff=8
 
@@ -107,6 +112,10 @@ colorscheme deus
 
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
+
+" mac下复制
+set clipboard=unnamed
+
 
 
 """""""""""""""""""
