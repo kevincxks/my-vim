@@ -136,7 +136,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 
 """""""""""""""""""
-"""""""Ctags"""""""
+"""""""Ctags""""""
 """""""""""""""""""
 set tags=./.tags;,.tags
 "set tags=./tags;,tags
