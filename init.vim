@@ -6,8 +6,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'w0ng/vim-hybrid'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'AndrewRadev/splitjoin.vim'
 " 异步执行
 Plug 'skywind3000/asyncrun.vim'
 " linting
@@ -22,13 +21,21 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
+Plug 'luochen1990/rainbow'
+
+
 call plug#end()
 
 """"""""""""""""""""""
 "      Settings      "
 """"""""""""""""""""""
-
-inoremap jj <Esc>
+set backspace=indent,eol,start
+"inoremap jj <Esc>
 
 
 set tabstop=4
@@ -211,6 +218,50 @@ set updatetime=100
 
 " 把:diff 映射为:SignifyDiff
 cnoremap diff SignifyDiff
+
+""""""""""""""""""""""
+"""""""""fzf""""""""""
+""""""""""""""""""""""
+
+nnoremap <C-p> :Files<CR>
+
+""""""""""""""""""""""
+"""""""indent"""""""""
+""""""""""""""""""""""
+
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+
+""""""""""""""""""""""
+"""""""rainbow""""""""
+""""""""""""""""""""""
+
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
+\   'ctermfgs': ['lightyellow', 'lightcyan','lightblue', 'lightmagenta'],
+\   'operators': '_,_',
+\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\       '*': {},
+\       'tex': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\       },
+\       'lisp': {
+\           'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
+\       },
+\       'vim': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\       },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\       'css': 0,
+\   }
+\}
+
 
 """"""""""""""""""""""
 """"""highlight"""""""
