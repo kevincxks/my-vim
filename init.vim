@@ -23,6 +23,10 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdcommenter'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 """"""""""""""""""""""
@@ -81,7 +85,7 @@ set laststatus=2
 set nohlsearch
 
 " 允许buffer未保存切换
-set hidden 
+"set hidden 
 
 " 搜索时立刻跳转到匹配
 set incsearch
@@ -114,7 +118,11 @@ nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
 
 " mac下复制
-set clipboard=unnamed
+"set clipboard=unnamed
+
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
 
 
 
@@ -292,4 +300,7 @@ function! s:show_documentation()
   endif
 endfunction
 
+
+
+nnoremap <C-p> :GFiles<CR>
 
