@@ -6,7 +6,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'w0ng/vim-hybrid'
-"Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 " 异步执行
 Plug 'skywind3000/asyncrun.vim'
 " linting
@@ -27,6 +27,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
+Plug 'easymotion/vim-easymotion'
 
 
 call plug#end()
@@ -34,6 +35,11 @@ call plug#end()
 """"""""""""""""""""""
 "      Settings      "
 """"""""""""""""""""""
+
+" 定义前缀键为，
+let mapleader=" "
+
+
 set backspace=indent,eol,start
 "inoremap jj <Esc>
 
@@ -56,7 +62,6 @@ set autoindent
 
 
 
-
 " 不要铃声
 set noerrorbells
 
@@ -69,6 +74,27 @@ set cursorline
 
 
 set textwidth=80
+
+
+" 搜索的时候保持光标在屏幕中央
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+
+
+" 撤回的时候以下列符号作为分割而不是整句撤回
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
+
+
+
+"窗口跳转"
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 "太长的行分为几行显示
 set wrap
@@ -97,16 +123,8 @@ set incsearch
 set ignorecase
 
 
-" 定义前缀键为，
-let mapleader=" "
-
-
-" 把保存映射一下
-inoremap <C-S> <C-[>:w<CR>
-nnoremap <C-S> :w<CR>
-
-" 距离边界还有八行就可以开始滚动
-set scrolloff=8
+" 距离边界还有十行就可以开始滚动
+set scrolloff=10
 
 set colorcolumn=80
 
@@ -237,6 +255,14 @@ cnoremap diff SignifyDiff
 
 nnoremap <C-p> :Files<CR>
 
+
+""""""""""""""""""""""
+""""""easymotion""""""
+""""""""""""""""""""""
+
+nmap ff <Plug>(easymotion-s2)
+
+
 """"""""""""""""""""""
 """""""indent"""""""""
 """"""""""""""""""""""
@@ -348,5 +374,5 @@ endfunction
 
 
 
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :Files<CR>
 
