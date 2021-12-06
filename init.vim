@@ -25,7 +25,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 Plug 'easymotion/vim-easymotion'
 
@@ -263,14 +262,6 @@ nnoremap <C-p> :Files<CR>
 nmap ff <Plug>(easymotion-s2)
 
 
-""""""""""""""""""""""
-"""""""indent"""""""""
-""""""""""""""""""""""
-
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
 
 """"""""""""""""""""""
 """""""rainbow""""""""
@@ -371,8 +362,6 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-
-
 
 nnoremap <C-p> :Files<CR>
 
