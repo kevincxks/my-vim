@@ -67,6 +67,8 @@ set noerrorbells
 
 " 相对行号
 set relativenumber
+set noswapfile
+set nobackup
 
 " 光标所在行高亮
 set cursorline
@@ -97,6 +99,11 @@ nnoremap <leader>l :wincmd l<CR>
 
 "太长的行分为几行显示
 set wrap
+
+
+
+set undodir=~/.vim/undodir
+set undofile
 
 
 " 只有遇到特定符号才折行
