@@ -2,7 +2,7 @@
 call plug#begin()
 " 让光标处在的单词拥有下划线 
 Plug 'itchyny/vim-cursorword'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'w0ng/vim-hybrid'
