@@ -2,7 +2,7 @@
 call plug#begin()
 " 让光标处在的单词拥有下划线 
 Plug 'itchyny/vim-cursorword'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'w0ng/vim-hybrid'
@@ -66,6 +66,8 @@ set noerrorbells
 
 " 相对行号
 set relativenumber
+set noswapfile
+set nobackup
 
 " 光标所在行高亮
 set cursorline
@@ -96,6 +98,11 @@ nnoremap <leader>l :wincmd l<CR>
 
 "太长的行分为几行显示
 set wrap
+
+
+
+set undodir=~/.vim/undodir
+set undofile
 
 
 " 只有遇到特定符号才折行
