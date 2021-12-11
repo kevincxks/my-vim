@@ -40,9 +40,8 @@ let mapleader=" "
 
 
 set backspace=indent,eol,start
-"inoremap jj <Esc>
-
-
+    
+    
 set tabstop=4
 set expandtab
 " >>的字符数
