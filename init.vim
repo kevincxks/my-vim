@@ -10,7 +10,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 " 异步执行
 Plug 'skywind3000/asyncrun.vim'
 " linting
-Plug 'dense-analysis/ale'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
@@ -27,6 +26,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'luochen1990/rainbow'
 Plug 'easymotion/vim-easymotion'
+Plug 'voldikss/vim-floaterm'
 
 
 call plug#end()
@@ -40,9 +40,8 @@ let mapleader=" "
 
 
 set backspace=indent,eol,start
-"inoremap jj <Esc>
-
-
+    
+    
 set tabstop=4
 set expandtab
 " >>的字符数
@@ -313,6 +312,13 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+
+""""""""""""""""""""""
+""""""floaterm""""""""
+""""""""""""""""""""""
+
+nnoremap <leader>t :FloatermToggle<CR>
+tnoremap <leader>t <C-\><C-n>:FloatermToggle<CR>
 
 
 """"""""""""""""""""""
