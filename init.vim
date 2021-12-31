@@ -82,6 +82,10 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 
+" 选中删除替换成默认register的东西
+vnoremap <leader>p "_dP
+
+
 
 " 撤回的时候以下列符号作为分割而不是整句撤回
 inoremap , ,<C-g>u
