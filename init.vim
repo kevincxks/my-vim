@@ -27,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'luochen1990/rainbow'
 Plug 'easymotion/vim-easymotion'
 Plug 'voldikss/vim-floaterm'
+Plug 'dense-analysis/ale'
 
 
 call plug#end()
@@ -73,7 +74,7 @@ set nobackup
 set cursorline
 
 
-set textwidth=80
+"set textwidth=80
 
 
 " 搜索的时候保持光标在屏幕中央
@@ -313,8 +314,8 @@ let g:cpp_concepts_highlight = 1
 """"""floaterm""""""""
 """"""""""""""""""""""
 
-nnoremap <leader>t :FloatermToggle<CR>
-tnoremap <leader>t <C-\><C-n>:FloatermToggle<CR>
+nnoremap <C-t> :FloatermToggle<CR>
+tnoremap <C-t> <C-\><C-n>:FloatermToggle<CR>
 
 
 """"""""""""""""""""""
