@@ -14,7 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
@@ -45,11 +44,25 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "voldikss/vim-floaterm"
-  use 'itchyny/vim-cursorword'
   use 'preservim/nerdtree'
   use 'mhinz/vim-startify'
-
-
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
+  use 'junegunn/fzf'
+  use 'junegunn/fzf.vim'
+  use 'scrooloose/nerdcommenter'
+  use 'tpope/vim-surround'
+  use 'luochen1990/rainbow'
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v1', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
+  use {'neoclide/coc.nvim', branch = 'release'}
+  use "lunarvim/colorschemes"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

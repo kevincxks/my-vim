@@ -19,7 +19,7 @@ vim.opt.splitright = true -- 永远在右边
 vim.opt.swapfile = false
 vim.opt.timeoutlen = 1000 -- 组合键的等待时间milliseconds
 vim.opt.undofile = true -- undo可以一直保存
-vim.opt.undodir = "~/.vim/undofir"
+vim.cmd "set undodir=~/.vim/undodir"
 vim.opt.updatetime = 300 -- faster completion
 vim.opt.errorbells = false
 vim.opt.writebackup = false -- 
@@ -39,6 +39,7 @@ vim.opt.scrolloff = 10 -- 保证上下移动时留有8行
 vim.opt.sidescrolloff = 10 -- 左右移动留有8列
 
 vim.opt.guifont = "monospace:h17"
+vim.opt.termguicolors = true
 vim.opt.shortmess:append "c"
 
 vim.opt.laststatus = 2 -- 显示状态栏
