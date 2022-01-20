@@ -52,7 +52,7 @@ return packer.startup(function(use)
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
   use 'scrooloose/nerdcommenter'
-  use 'tpope/vim-surround'
+  --use 'tpope/vim-surround'
   use 'luochen1990/rainbow'
   use {
     'phaazon/hop.nvim',
@@ -81,6 +81,9 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

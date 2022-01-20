@@ -56,7 +56,7 @@ keymap("i", "?", "?C-g>u", opts)
 -----------------------------------------------------------
 
 -- fzf
-keymap("n", "<C-p>", ":Files<cr>", opts)
+--keymap("n", "<C-p>", ":Files<cr>", opts)
 
 
 -- hop
@@ -100,5 +100,9 @@ let g:rainbow_conf = {
 \}
 ]]
 
+-- telescope
 
+--keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
+--keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown())<cr>", opts)
+keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>", opts)
 
