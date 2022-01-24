@@ -66,6 +66,7 @@ return packer.startup(function(use)
   }
   --use {'neoclide/coc.nvim', branch = 'release'}
   use "lunarvim/colorschemes"
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -92,6 +93,9 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
 
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
