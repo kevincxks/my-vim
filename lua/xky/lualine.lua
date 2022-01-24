@@ -18,9 +18,9 @@ local diagnostics = {
 }
 
 local diff = {
-	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+  "diff",
+  colored = false,
+  symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
   cond = hide_in_width
 }
 
@@ -34,7 +34,7 @@ local mode = {
 local filetype = {
 	"filetype",
 	icons_enabled = false,
-	icon = nil,
+  icon = nil,
 }
 
 local branch = {
@@ -68,12 +68,12 @@ lualine.setup({
 		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+		disabled_filetypes = { "dashboard", "NvimTree", "Outline", "toggleterm"},
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
+		lualine_a = { mode },
+		lualine_b = { branch, diagnostics },
 		lualine_c = { 'filename' },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },

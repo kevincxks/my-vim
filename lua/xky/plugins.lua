@@ -46,11 +46,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-  use "voldikss/vim-floaterm"
+  use "akinsho/toggleterm.nvim"
   use 'preservim/nerdtree'
   use 'mhinz/vim-startify'
-  --use 'vim-airline/vim-airline'
-  --use 'vim-airline/vim-airline-themes'
   use 'nvim-lualine/lualine.nvim'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
