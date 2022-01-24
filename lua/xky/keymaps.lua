@@ -16,7 +16,7 @@ keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- 打开目录树
+keymap("n", "<leader>s", ":wall<cr>", opts) -- 打开目录树
 
 
 -- buffer移动
