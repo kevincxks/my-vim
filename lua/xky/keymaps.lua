@@ -19,6 +19,10 @@ keymap("n", "<leader>l", "<C-w>l", opts)
 keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- 打开目录树
 
 
+-- buffer移动
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
 -- 调整窗口大小
 keymap("n", "<leader><UP>", ":resize -2<cr>", opts)
 keymap("n", "<leader><Down>", ":resize +2<cr>", opts)
