@@ -49,8 +49,9 @@ return packer.startup(function(use)
   use "voldikss/vim-floaterm"
   use 'preservim/nerdtree'
   use 'mhinz/vim-startify'
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  --use 'vim-airline/vim-airline'
+  --use 'vim-airline/vim-airline-themes'
+  use 'nvim-lualine/lualine.nvim'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
   use 'scrooloose/nerdcommenter'
