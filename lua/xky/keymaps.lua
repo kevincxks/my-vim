@@ -62,9 +62,9 @@ keymap("i", "?", "?C-g>u", opts)
 
 keymap("n", "ff", ":HopChar2<cr>", opts)
 
--- nerdtree
+-- Nvimtree
 
-keymap("n", "<C-n>", ":NERDTreeToggle<cr>", opts)
+keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
 
 -- floaterm
 
