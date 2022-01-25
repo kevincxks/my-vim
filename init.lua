@@ -1,4 +1,5 @@
 
+require "xky.impatient"
 require "xky.options"
 require "xky.keymaps"
 require "xky.plugins"
