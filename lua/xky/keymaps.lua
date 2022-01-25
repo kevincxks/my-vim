@@ -110,4 +110,5 @@ let g:rainbow_conf = {
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>", opts)
 
+keymap('n', "<C-g>", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<leader>f", ":Format<cr>", opts)
