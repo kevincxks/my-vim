@@ -48,7 +48,6 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "akinsho/toggleterm.nvim"
   use 'preservim/nerdtree'
-  use 'mhinz/vim-startify'
   use 'nvim-lualine/lualine.nvim'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
@@ -109,6 +108,7 @@ return packer.startup(function(use)
   use 'lewis6991/impatient.nvim'
 
   use "lukas-reineke/indent-blankline.nvim"
+  use 'goolord/alpha-nvim'
   -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
