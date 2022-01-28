@@ -9,14 +9,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- 窗口移动
-
 keymap("n", "<leader>h", "<C-w>h", opts)
 keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
 keymap("n", "<leader>s", ":wall<cr>", opts) -- 打开目录树
-
 
 -- buffer移动
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -27,8 +25,6 @@ keymap("n", "<leader><UP>", ":resize -2<cr>", opts)
 keymap("n", "<leader><Down>", ":resize +2<cr>", opts)
 keymap("n", "<leader><Left>", ":vertical resize -2<cr>", opts)
 keymap("n", "<leader><Right>", ":vertical resize +2<cr>", opts)
-
-
 -- 取消shift+j的合并行操作
 keymap("v", "<S-j>", "<nop>", opts)
 keymap("n", "<S-j>", "<nop>", opts)
@@ -73,34 +69,6 @@ keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
 
 keymap("n", "<C-t>", ":FloatermToggle<cr>", opts)
 keymap("t", "<C-t>", "<C-\\><C-n>:FloatermToggle<cr>", opts)
-
--- rainbow
-
-vim.cmd [[
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-\   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
-\   'ctermfgs': ['lightyellow', 'lightcyan','lightblue', 'lightmagenta'],
-\   'operators': '_,_',
-\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\   'separately': {
-\       '*': {},
-\       'tex': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\       },
-\       'lisp': {
-\           'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
-\       },
-\       'vim': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\       },
-\       'html': {
-\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-\       },
-\       'css': 0,
-\   }
-\}
-]]
 
 -- telescope
 

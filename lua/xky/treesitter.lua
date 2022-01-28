@@ -9,4 +9,18 @@ configs.setup {
     additional_vim_regex_highlighting = true,
   },
   indent = { enable = false, disable = { "yaml" } },
+  rainbow = {
+    enable = false,
+    colors = {
+      "#E06C75",
+      "#E5C07B",
+      "#98C379",
+      "#56B6C2",
+      "#61AFEF",
+      "#C678DD",
+      "#E06C75"
+    },
+    extended_mode = true,
+    max_file_lines = nil
+  }
 }
