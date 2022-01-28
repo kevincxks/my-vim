@@ -2,7 +2,6 @@
 
 local opts = {noremap = true, silent = true}
 
-
 local keymap = vim.api.nvim_set_keymap
 
 keymap("", "<Space>", "<Nop>", opts)
@@ -33,7 +32,6 @@ keymap("n", "<leader><Right>", ":vertical resize +2<cr>", opts)
 -- 取消shift+j的合并行操作
 keymap("v", "<S-j>", "<nop>", opts)
 keymap("n", "<S-j>", "<nop>", opts)
-keymap("i", "<S-j>", "<nop>", opts)
 
 -- visual mode下快捷缩进
 keymap("v", "<", "<gv", opts)
