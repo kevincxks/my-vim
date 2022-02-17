@@ -112,6 +112,9 @@ return packer.startup(function(use)
 
   use 'p00f/nvim-ts-rainbow'
 
+  use 'Vimjas/vim-python-pep8-indent'
+
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
