@@ -51,7 +51,6 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
-  use 'scrooloose/nerdcommenter'
   --use 'tpope/vim-surround'
   use {
     'phaazon/hop.nvim',
@@ -115,6 +114,13 @@ return packer.startup(function(use)
   use 'Vimjas/vim-python-pep8-indent'
 
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
   -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
