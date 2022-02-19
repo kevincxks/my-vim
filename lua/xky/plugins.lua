@@ -148,8 +148,10 @@ return packer.startup(function(use)
     end
   }
   use 'folke/tokyonight.nvim'
+  -- symbols-outline.nvim
+  use "simrat39/symbols-outline.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
--- Put this at the end after all plugins
+  -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
