@@ -98,3 +98,7 @@ noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 
 -- markdown
 keymap('n', "<leader>md", ":MarkdownPreviewToggle<cr>", opts)
+
+
+-- zen-mode
+keymap('n', "<leader>z", ":ZenMode<cr>", opts)

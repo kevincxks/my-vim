@@ -131,6 +131,10 @@ return packer.startup(function(use)
     run = 'cd app && yarn install',
     setup = require("xky.markdown").setup(),
   })
+
+  use {
+    "folke/zen-mode.nvim",
+  }
   -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
