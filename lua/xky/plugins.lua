@@ -121,6 +121,16 @@ return packer.startup(function(use)
         require('Comment').setup()
     end
   }
+  -- Markdown preview
+  use({
+    'iamcco/markdown-preview.nvim',
+    ft = 'markdown',
+    -- run = function()
+    --   vim.fn['mkdp#util#install']()
+    -- end
+    run = 'cd app && yarn install',
+    setup = require("xky.markdown").setup(),
+  })
   -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
