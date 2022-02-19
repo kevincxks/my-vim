@@ -102,3 +102,9 @@ keymap('n', "<leader>md", ":MarkdownPreviewToggle<cr>", opts)
 
 -- zen-mode
 keymap('n', "<leader>z", ":ZenMode<cr>", opts)
+
+
+-- trouble
+keymap('n', "<leader>tt", "<cmd>Trouble document_diagnostics<cr>", opts)
+keymap('n', "<leader>tw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+keymap('n', "<leader>tq", "<cmd>TroubleClose<cr>", opts)
