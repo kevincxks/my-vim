@@ -109,8 +109,6 @@ return packer.startup(function(use)
   use 'goolord/alpha-nvim'
   use {'kevinhwang91/nvim-hlslens'}
 
-  use 'p00f/nvim-ts-rainbow'
-
   use 'Vimjas/vim-python-pep8-indent'
 
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
