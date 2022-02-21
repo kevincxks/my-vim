@@ -16,6 +16,6 @@ null_ls.setup {
   sources = {
     formatting.black.with { extra_args = {"--fast"} },
     formatting.stylua,
-    diagnostics.flake8,
+    diagnostics.flake8.with { extra_args = {"--ignore=E203,E402,W503"}} -- ignore 切片空格和顶部import
   }
 }
