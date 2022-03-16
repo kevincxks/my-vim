@@ -47,6 +47,10 @@ vim.opt.laststatus = 2 -- 显示状态栏
 -- vim.cmd "set whichwrap+=<,>,[,],h,l" -- 光标可以跨行移动
 vim.cmd [[set iskeyword+=-]] -- 把-算进一个单词内
 
+vim.cmd [[
+autocmd FileType make setlocal noexpandtab
+]]
+
 vim.opt.backspace = {"indent", "eol", "start"}
 
 vim.opt.wrap = true -- 太长的行分几行显示
