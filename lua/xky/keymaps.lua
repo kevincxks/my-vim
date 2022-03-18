@@ -41,8 +41,6 @@ keymap("n", "N", "Nzzzv", opts)
 
 keymap("i", ",", ",<C-g>u", opts)
 keymap("i", ".", ".<C-g>u", opts)
-keymap("i", "!", "!<C-g>u", opts)
-keymap("i", "?", "?C-g>u", opts)
 
 
 keymap('n', '<leader>q', ':cclose<cr>', opts)
