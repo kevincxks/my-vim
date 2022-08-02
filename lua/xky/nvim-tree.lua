@@ -71,6 +71,7 @@ nvim_tree.setup {
     }
   },
   view = {
+    adaptive_size = true,
     width = 27,
     height = 30,
     hide_root_folder = false,
@@ -87,5 +88,8 @@ nvim_tree.setup {
     },
     number = false,
     relativenumber = false,
+  },
+  filters = {
+    custom = { "^.git$", "^.clangd$" }
   },
 }
