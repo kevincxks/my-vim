@@ -14,7 +14,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.black.with { extra_args = {"--fast"} },
+    formatting.black.with { extra_args = {"--fast", "--line-length", "120"} },
     formatting.stylua,
     diagnostics.flake8.with { extra_args = {"--ignore=E203,E402,W503"}} -- ignore 切片空格和顶部import
   }
