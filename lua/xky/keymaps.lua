@@ -32,7 +32,7 @@ keymap("n", "<S-j>", "<nop>", opts)
 -- visual mode下快捷缩进
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-keymap("v", "p", '"_dp', opts) --不让选中删除替换掉默认register
+-- keymap("v", "p", '"_dkp', opts) --不让选中删除替换掉默认register
 
 -- 搜索的时候保持光标在中央
 keymap("n", "n", "nzzzv", opts)
