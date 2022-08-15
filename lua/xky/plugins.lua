@@ -93,7 +93,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
-  use "akinsho/bufferline.nvim"
+  -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
 
   -- Git
@@ -101,7 +101,7 @@ return packer.startup(function(use)
 
   use {'kevinhwang91/nvim-bqf', ft = 'qf'}
 
-  use "ahmedkhalf/project.nvim"
+  -- use "ahmedkhalf/project.nvim"
 
   use 'lewis6991/impatient.nvim'
 
@@ -150,6 +150,11 @@ return packer.startup(function(use)
   use "simrat39/symbols-outline.nvim"
 
   use "simrat39/rust-tools.nvim"
+
+  use "mhinz/vim-startify"
+
+
+  use 'mfussenegger/nvim-dap'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
