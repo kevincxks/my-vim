@@ -47,7 +47,6 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "akinsho/toggleterm.nvim"
-  use 'preservim/nerdtree'
   use 'nvim-lualine/lualine.nvim'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
@@ -61,7 +60,7 @@ return packer.startup(function(use)
     end
   }
   --use {'neoclide/coc.nvim', branch = 'release'}
-  use "lunarvim/colorschemes"
+  -- use "lunarvim/colorschemes"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- cmp plugins
@@ -94,7 +93,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   -- use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  -- use "moll/vim-bbye"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -120,31 +119,22 @@ return packer.startup(function(use)
     end
   }
   -- Markdown preview
-  use({
-    'iamcco/markdown-preview.nvim',
-    ft = 'markdown',
-    -- run = function()
-    --   vim.fn['mkdp#util#install']()
-    -- end
-    run = 'cd app && yarn install',
-    setup = require("xky.markdown").setup(),
-  })
 
   use {
     "folke/zen-mode.nvim",
   }
   -- Lua
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  -- use {
+  --   "folke/trouble.nvim",
+  --   requires = "kyazdani42/nvim-web-devicons",
+  --   config = function()
+  --     require("trouble").setup {
+  --       -- your configuration comes here
+  --       -- or leave it empty to use the default settings
+  --       -- refer to the configuration section below
+  --     }
+  --   end
+  -- }
   use 'folke/tokyonight.nvim'
   -- symbols-outline.nvim
   use "simrat39/symbols-outline.nvim"
@@ -155,6 +145,20 @@ return packer.startup(function(use)
 
 
   use 'mfussenegger/nvim-dap'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+  use 'nvim-telescope/telescope-dap.nvim'
+  -- WhichKey
+  -- use {
+  --    "folke/which-key.nvim",
+  --    config = function()
+  --      require("xky/whichkey").setup()
+  --    end,
+  -- }
+
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
