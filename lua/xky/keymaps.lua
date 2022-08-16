@@ -65,10 +65,12 @@ keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
 
 -- telescope
 
---keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>", opts)
+keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
+-- keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>", opts)
 keymap("n", "<leader>P", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>p", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
+-- keymap("n", "<leader>P", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_ivy())<cr>", opts)
+-- keymap("n", "<leader>p", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
+keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown())<cr>", opts)
 
 -- keymap('n', "<C-g>", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<leader>f", ":Format<cr>", opts)

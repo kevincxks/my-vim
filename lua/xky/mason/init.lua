@@ -4,5 +4,6 @@ require('lsp-setup').setup({
 		on_attach = require("xky.mason.handlers").on_attach,
     servers = {
         ['pyright'] = require("xky.mason.settings.pyright"),
+        ['sumneko_lua'] = require("xky.mason.settings.sumneko_lua")
     }
 })
