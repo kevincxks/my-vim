@@ -3,11 +3,22 @@
 local dap = require('dap')
 
 
+
+local pythonpath
+
+local mason_path = vim.fn.stdpath('data') .. '/mason'
+local adapter_path = mason_path .. '/bin/debugpy-adapter'
 local conda = os.getenv("CONDA_PREFIX")
+if conda then
+  pythonpath  = conda .. '/bin/python'
+else
+  pythonpath = 'python3'
+end
+print(pythonpath)
 dap.adapters.python = {
-  type = 'executable';
-  command = conda .. '/bin/python';
-  args = { '-m', 'debugpy.adapter' };
+  type = 'executable',
+  command = adapter_path,
+  -- args = { '-m', 'debugpy.adapter' }
 }
 
 
@@ -27,10 +38,10 @@ dap.configurations.python = {
       -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
       local conda = os.getenv("CONDA_PREFIX")
       local cwd = vim.fn.getcwd()
-      if vim.fn.executable(conda .. "/bin/python") == 1 then
+      if conda and vim.fn.executable(conda .. "/bin/python") == 1 then
         return conda .. "/bin/python"
       else
-        return '/usr/bin/python'
+        return 'python3'
       end
     end;
   },

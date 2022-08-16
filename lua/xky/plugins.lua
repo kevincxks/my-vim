@@ -156,6 +156,15 @@ return packer.startup(function(use)
   --      require("xky/whichkey").setup()
   --    end,
   -- }
+  --
+  use {
+    'kevincxks/lsp-setup.nvim',
+    requires = {
+        'neovim/nvim-lspconfig',
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+    }
+  }
 
 
 

@@ -15,7 +15,6 @@ keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
 keymap("n", "<leader>s", ":wall<cr>", opts) -- 打开目录树
-
 -- buffer移动
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -63,16 +62,13 @@ keymap("n", "ff", ":HopChar2<cr>", opts)
 
 keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
 
--- floaterm
-
-keymap("n", "<C-t>", ":FloatermToggle<cr>", opts)
-keymap("t", "<C-t>", "<C-\\><C-n>:FloatermToggle<cr>", opts)
 
 -- telescope
 
 --keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>", opts)
-keymap("n", "<leader>p", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>P", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>p", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 
 -- keymap('n', "<C-g>", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<leader>f", ":Format<cr>", opts)
