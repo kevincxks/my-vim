@@ -138,7 +138,9 @@ return packer.startup(function(use)
   --     }
   --   end
   -- }
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+
   -- symbols-outline.nvim
   use "simrat39/symbols-outline.nvim"
 
@@ -167,6 +169,9 @@ return packer.startup(function(use)
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
     }
+  }
+  use {
+  "ray-x/lsp_signature.nvim",
   }
 
 
