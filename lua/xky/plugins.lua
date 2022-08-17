@@ -108,7 +108,7 @@ return packer.startup(function(use)
   use 'lewis6991/impatient.nvim'
 
   use "lukas-reineke/indent-blankline.nvim"
-  use 'goolord/alpha-nvim'
+  -- use 'goolord/alpha-nvim'
   use {'kevinhwang91/nvim-hlslens'}
 
   use 'Vimjas/vim-python-pep8-indent'
@@ -162,6 +162,8 @@ return packer.startup(function(use)
   --    end,
   -- }
   --
+  use "folke/todo-comments.nvim" -- todo comments
+
   use {
     'kevincxks/lsp-setup.nvim',
     requires = {
@@ -173,6 +175,14 @@ return packer.startup(function(use)
   use {
   "ray-x/lsp_signature.nvim",
   }
+
+  use {
+    "akinsho/bufferline.nvim", -- tab
+    tag = "v1.2.0",
+  }
+
+
+
 
 
 
