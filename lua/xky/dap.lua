@@ -14,7 +14,6 @@ if conda then
 else
   pythonpath = 'python3'
 end
-print(pythonpath)
 dap.adapters.python = {
   type = 'executable',
   command = adapter_path,
