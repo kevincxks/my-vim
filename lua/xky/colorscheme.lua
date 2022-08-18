@@ -4,7 +4,7 @@ vim.g.tokyonight_colors = { border = "blue" }
 
 vim.g.tokyonight_style = "night"
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 
 
