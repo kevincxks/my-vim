@@ -37,9 +37,9 @@ telescope.setup {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = {
-      shorten = {
-        len = 3, exclude = { 1, -1 }
-      }
+      -- shorten = {
+      --   -- len = 3, exclude = { 1, -1 }
+      -- }
     },
 
     layout_config = {
